@@ -4,8 +4,24 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    //Singleton
+    public static Inventory Instance { get; private set; }
+
+
     // Private var
     private int keycardLvl, scp207;
+
+    private void Awake()
+    {
+        if(Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
@@ -30,6 +46,12 @@ public class Inventory : MonoBehaviour
         {
             keycardLvl = _Lvl;
         }
+    }
+
+    // Fn return level access value
+    public int GetKeycardLvl()
+    {
+        return keycardLvl;
     }
 
     // Fn to add SCP207

@@ -7,12 +7,28 @@ using UnityEngine.UI;
 public class Eyes : MonoBehaviour
 {
     // Public var
-    public Image blackBG;
+    public Image blackBG, fillerImg;
     public float minTime2Blink, maxTime2Blink, blinkDuration, decreaseDurationRate;
 
     // Private var
     private float time2Blink, currentTime2Blink;
     private bool isBlinking;
+
+    //Singleton
+    public static Eyes Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +43,14 @@ public class Eyes : MonoBehaviour
     {
         Blink();
         Time2Blink();
+        UpdateUI();
     }
 
+    // Fn update UI
+    public void UpdateUI()
+    {
+        fillerImg.fillAmount = time2Blink / currentTime2Blink;
+    }
     public void Blink()
     {
         if (!isBlinking)
