@@ -24,6 +24,7 @@ public class Interactor : MonoBehaviour
                 if(_hit.collider.gameObject.GetComponent<InteractableObj>() != null)
                 {
                     _hit.collider.gameObject.GetComponent<InteractableObj>().Interaction();
+                    Debug.Log(gameObject.name);
                 }
             }
         }
