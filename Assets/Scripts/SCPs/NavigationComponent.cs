@@ -56,7 +56,7 @@ public class NavigationComponent : MonoBehaviour
 
     public void SetAgentSpeed(float _speed)
     {
-        navMeshAgent.speed = -_speed;
+        navMeshAgent.speed = _speed;
     }
 
     public float RemainingDistance()

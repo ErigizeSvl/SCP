@@ -832,7 +832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 411952190394322223, guid: be5d0c2ffbb8bd142be3bcf52982dfae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.58
+      value: 4.55
       objectReference: {fileID: 0}
     - target: {fileID: 411952190394322223, guid: be5d0c2ffbb8bd142be3bcf52982dfae, type: 3}
       propertyPath: m_LocalRotation.w
@@ -869,8 +869,57 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6552459014317806635, guid: be5d0c2ffbb8bd142be3bcf52982dfae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 653985694}
+    - targetCorrespondingSourceObject: {fileID: 6552459014317806635, guid: be5d0c2ffbb8bd142be3bcf52982dfae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 653985693}
   m_SourcePrefab: {fileID: 100100000, guid: be5d0c2ffbb8bd142be3bcf52982dfae, type: 3}
+--- !u!1 &653985691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6552459014317806635, guid: be5d0c2ffbb8bd142be3bcf52982dfae, type: 3}
+  m_PrefabInstance: {fileID: 653985690}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &653985692 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8777801754082383125, guid: be5d0c2ffbb8bd142be3bcf52982dfae, type: 3}
+  m_PrefabInstance: {fileID: 653985690}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &653985693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653985691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9576a385fd02c234d8b57c8f5b22a982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderingSpeed: 3.5
+  attackSpeed: 5
+  detectionDistance: 7.5
+  maxDistanceFromPlay: 30
+  meshRenderer: {fileID: 653985692}
+  onPlayerReached:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &653985694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653985691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ad5633f24910845a3f348f8b0d8706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxWalkDistance: 10
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2198,7 +2247,7 @@ Transform:
   m_GameObject: {fileID: 1834876482}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 3.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

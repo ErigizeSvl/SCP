@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(NavigationComponent))]
 
@@ -9,6 +10,7 @@ public class SCP173 : MonoBehaviour
 
     public float wanderingSpeed, attackSpeed, detectionDistance, maxDistanceFromPlay;
     public MeshRenderer meshRenderer;
+    public UnityEvent onPlayerReached;
 
     private NavigationComponent navigation;
     private bool isWandering, isAttacking;
@@ -64,7 +66,7 @@ public class SCP173 : MonoBehaviour
         {
             isAttacking = false;
             isWandering = true;
-            currentSpeed = attackSpeed;
+            currentSpeed = wanderingSpeed;
         }
     }
 
@@ -76,7 +78,7 @@ public class SCP173 : MonoBehaviour
 
             if(Vector3.Distance(transform.position, Eyes.Instance.gameObject.transform.position) < 0.25f)
             {
-
+                onPlayerReached.Invoke();
             }
         }
     }
