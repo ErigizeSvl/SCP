@@ -56,6 +56,7 @@ public class NavigationComponent : MonoBehaviour
 
     public void SetAgentSpeed(float _speed)
     {
+        if (navMeshAgent != null) 
         navMeshAgent.speed = _speed;
     }
 

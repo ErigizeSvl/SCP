@@ -7,12 +7,21 @@ public class Interactor : MonoBehaviour
     // Public var
     public float interactionDistance;
 
+    // Private var
+    private bool canInteract = true;
+
     // Update is called once per frame
     void Update()
     {
-        Interaction();
+        if (canInteract)
+        {
+            Interaction();
+        }
     }
-
+    public void CanInteract(bool _state)
+    {
+        canInteract = _state;
+    }
     // Fn Interaction
     void Interaction()
     {

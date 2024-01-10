@@ -76,7 +76,7 @@ public class SCP173 : MonoBehaviour
         {
             navigation.Move2Position(Eyes.Instance.gameObject.transform.position);
 
-            if(Vector3.Distance(transform.position, Eyes.Instance.gameObject.transform.position) < 0.25f)
+            if(Vector3.Distance(transform.position, Eyes.Instance.gameObject.transform.position) < 1.3f)
             {
                 onPlayerReached.Invoke();
             }
